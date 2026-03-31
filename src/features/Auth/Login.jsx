@@ -327,6 +327,31 @@ const Login = () => {
   }
 };
 
+
+const demoUsers = [
+  {
+    role: "Admin",
+    email: "admin@saaranik.com",
+    password: "Admin@123",
+  },
+  {
+    role: "Employee",
+    email: "employee@saaranik.com",
+    password: "Employee@123",
+  },
+  {
+    role: "Client",
+    email: "client@saaranik.com",
+    password: "Client@123",
+  },
+];
+
+const handleDemoLogin = (user) => {
+  setFormData({
+    email: user.email,
+    password: user.password,
+  });
+};
   return (
     <div id="login-bg" className="auth-container d-flex justify-content-center align-items-center min-vh-100 bg-light">
       <main className="w-100" style={{ maxWidth: "550px" }}>
@@ -411,6 +436,39 @@ const Login = () => {
             </button>
           </form>
         </div>
+
+        <div className="mt-5">
+  <h6 className="text-center fw-semibold mb-3 text-muted">
+    Try Demo Accounts
+  </h6>
+
+  <div className="d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center">
+    {demoUsers.map((user, index) => (
+      <div
+        key={index}
+        className="demo-card-horizontal d-flex align-items-center justify-content-between px-3 py-2 "
+        onClick={() => handleDemoLogin(user)}
+      >
+        <div className="d-flex align-items-center">
+          <div className="demo-icon me-2">
+            {user.role === "Admin" && "🛡️"}
+            {user.role === "Employee" && "👨‍💻"}
+            {user.role === "Client" && "👤"}
+          </div>
+
+          <div>
+            <div className="fw-semibold small">{user.role}</div>
+            <small className="text-muted">{user.email}</small>
+          </div>
+        </div>
+
+        <button className="btn btn-sm btn-primary ms-2">
+          Use
+        </button>
+      </div>
+    ))}
+  </div>
+</div>
       </main>
     </div>
   );

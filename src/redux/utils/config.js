@@ -3,5 +3,5 @@
 
 // localhost link
 // const BASE_URL= "http://localhost:9000/api"; 
-const BASE_URL= "https://saaranik-backend-full-ok-code-production.up.railway.app/api"; 
+const BASE_URL= "https://saaranik-backend.onrender.com/api"; 
 export const apiUrl = BASE_URL;

@@ -97,16 +97,16 @@ function UserRoles() {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      if (result.isConfirmed) {
-        dispatch(deleteusers(_id))
-          .then(() => {
-            Swal.fire("Deleted!", "The document has been deleted.", "success");
-            dispatch(fetchusers());
-          })
-          .catch(() => {
-            Swal.fire("Error!", "Something went wrong.", "error");
-          });
-      }
+      // if (result.isConfirmed) {
+      //   dispatch(deleteusers(_id))
+      //     .then(() => {
+      //       Swal.fire("Deleted!", "The document has been deleted.", "success");
+      //       dispatch(fetchusers());
+      //     })
+      //     .catch(() => {
+      //       Swal.fire("Error!", "Something went wrong.", "error");
+      //     });
+      // }
     });
   }
   const handleEditUser = (user) => {
@@ -193,7 +193,7 @@ function UserRoles() {
                   <tr key={user._id}>
                     <td>
                       <div className="d-flex align-items-center">
-                        <div className="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center me-2" style={{ width: '32px', height: '32px' }}>
+                        <div className="rounded-circle   text-white d-flex align-items-center justify-content-center me-2" style={{ width: '32px', height: '32px' }}>
                           {/* {user.firstName.charAt(0)}   */}
                           {/* <img src={user.profileImage[0]} alt="" /> */}
                           <img
